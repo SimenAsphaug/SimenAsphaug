@@ -27,3 +27,36 @@ jobs:
           # Include organization repositories
           plugin_repositories: yes
           plugin_repositories_affiliations: owner,collaborator,organization_member
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Your GitHub token
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: SimenAsphaug
+          template: classic
+          base: header, community, repositories, metadata, habits
+          repositories: 100    # Query only last 100 repositories
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator
+          config_timezone: Europe/Oslo
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
+          plugin_followup_indepth: yes
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_ignored: logos, ejs, html, css
+          plugin_languages_limit: 8
+          plugin_languages_other: yes
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 365
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: recently-used
+          plugin_achievements: yes
+          plugin_achievements_display: compact
