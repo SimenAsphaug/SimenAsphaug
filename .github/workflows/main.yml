@@ -19,7 +19,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: SimenAsphaug
           template: classic                               # Use the classic template for better visuals
-          base: header, community, repositories, metadata # Base sections to include
+          base: header, repositories # Base sections to include
           config_timezone: Europe/Oslo                   # Set timezone
           
           # Enable the languages plugin
