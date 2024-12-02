@@ -25,7 +25,12 @@ jobs:
           plugin_languages_skipped: html,css                  # Exclude HTML and CSS
           plugin_languages_recent_days: 365                   # Analyze recent languages over the past year
           plugin_languages_recent_load: 300                   # Load data from up to 300 repositories
-          
+
           # Include organization repositories
           plugin_repositories: yes
           plugin_repositories_affiliations: owner,collaborator,organization_member
+          
+          # Enable the achievements plugin
+          plugin_achievements: yes
+          plugin_achievements_display: compact                # Display format: compact
+          plugin_achievements_threshold: bronze               # Show achievements starting from bronze level
