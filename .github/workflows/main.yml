@@ -17,13 +17,14 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          # Enable the achievements plugin
+          # Enable achievements plugin
           plugin_achievements: yes
           plugin_achievements_display: compact  # Options: detailed, compact, advanced
           plugin_achievements_threshold: bronze # Options: bronze, silver, gold, platinum
           
           # Enable the languages plugin
           plugin_languages: yes
-          plugin_languages_recent: yes          # Enable recently used languages
-          plugin_languages_threshold: 8         # Show top 8 most used languages
-          plugin_languages_skipped: "html,css"  # (Optional) Exclude specific languages
+          plugin_languages_sections: most-used,recent  # Enable both most-used and recently-used sections
+          plugin_languages_threshold: 5               # Show the top 5 languages
+          plugin_languages_skipped: html,css          # (Optional) Skip specific languages
+          plugin_languages_details: percentage        # Show percentage for language usage
