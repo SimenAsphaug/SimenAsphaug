@@ -19,12 +19,9 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           # Enable achievements plugin
           plugin_achievements: yes
-          plugin_achievements_display: compact  # Options: detailed, compact, advanced
-          plugin_achievements_threshold: bronze # Options: bronze, silver, gold, platinum
-          
+          plugin_achievements_display: compact
           plugin_languages: yes
-          plugin_languages_sections: most-used
-          plugin_languages_aliases: '{"terraform": ["tf"]}'
-          plugin_languages_threshold: 5
+          plugin_languages_affiliations: owner,organization_member
+          plugin_languages_sections: most-used,recent
           plugin_languages_indepth: yes
-          plugin_languages_skipped: html,css  # Exclude unrelated languages
+          plugin_repositories_affiliations: owner,collaborator,organization_member
